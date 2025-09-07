@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "6.0.2",
-    "astro": "^5.13.5"
+    "astro": "^5.13.5",
+    "netlify-cms-app": "2.14.14"
   },
   "devDependencies": {
     "autoprefixer": "10.4.21",
