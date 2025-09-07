@@ -1,15 +1,13 @@
 import { defineCollection, z } from "astro:content";
 
-// Define "projects" collection schema
 const projects = defineCollection({
-  type: "content", // can be "content" (Markdown/MDX) or "data" (JSON/YAML)
+  type: "content",
   schema: z.object({
     title: z.string(),
-    image: z.string().optional(),
+    date: z.date(),
+    image: z.string(),
     description: z.string(),
   }),
 });
 
-export const collections = {
-  projects,
-};
+export const collections = { projects };
