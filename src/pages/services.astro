@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+---
+
+<Layout title="Our Services">
+  <Header />
+
+  <main class="py-16 px-6 max-w-6xl mx-auto">
+    <h1 class="text-4xl font-bold text-center mb-12">Our Services</h1>
+    <div class="grid md:grid-cols-3 gap-8">
+      <ServiceCard title="House Construction" description="Full construction service from foundation to finishing." />
+      <ServiceCard title="Renovations" description="Expert renovations to modernize and strengthen existing homes." />
+      <ServiceCard title="Design Assistance" description="Tailored designs that balance tradition with modern style." />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

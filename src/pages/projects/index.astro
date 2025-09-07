@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+type Project = CollectionEntry<"projects">;
+const projects: Project[] = await getCollection("projects");
+---
+
+<Layout title="Our Projects - Sree Balaji Constructions">
+  <Header />
+
+  <main class="py-16 px-6 max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-5xl font-bold mb-4 text-gray-800">Our Projects</h1>
+      <p class="text-lg text-gray-600">
+        Take a look at some of the homes and projects we’ve proudly built for families in villages.
+      </p>
+    </section>
+
+    <!-- Project Grid -->
+    <section>
+      <div class="grid md:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            image={project.data.image}
+            description={project.data.description}
+            href={`/projects/${project.slug}`}
+          />
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
