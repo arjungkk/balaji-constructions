@@ -5,20 +5,25 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title ? title + " | Sreebalaji Constructions" : "Sreebalaji Constructions"}</title>
+    <title>{title ? title + " | Sree Balaji Constructions" : "Sree Balaji Constructions"}</title>
+
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        // Initialize widget so it can handle invite/reset links
+        window.netlifyIdentity.init();
+
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </head>
- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
- <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
   <body class="bg-gray-50 text-gray-900">
     <slot />
   </body>
