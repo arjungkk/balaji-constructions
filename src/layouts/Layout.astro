@@ -24,7 +24,7 @@ const { title } = Astro.props;
       if (window.netlifyIdentity) {
         // Initialize widget so it can handle invite/reset links
         window.netlifyIdentity.init({
-          APIUrl: "https://sreebalajiconstructions.netlify.app/.netlify/identity",
+          APIUrl: window.location.origin + "/.netlify/identity",
         });
 
         window.netlifyIdentity.on("init", (user) => {

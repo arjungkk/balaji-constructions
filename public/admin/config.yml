@@ -7,14 +7,26 @@ public_folder: "/uploads"
 
 collections:
   - name: "pages"
-    label: "Pages"
-    files:
-      - file: "src/pages/about.astro"
-        label: "About Page"
-        name: "about"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+  label: "Pages"
+  files:
+    - file: "src/content/pages/about.md"
+      label: "About Page"
+      name: "about"
+      fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Hero", name: "hero", widget: "string" }
+        - { label: "Story Image", name: "story_image", widget: "image" }
+        - { label: "Story Title", name: "story_title", widget: "string" }
+        - { label: "Story Body", name: "story_body", widget: "markdown" }
+        - label: "Values"
+          name: "values"
+          widget: "list"
+          fields:
+            - { label: "Title", name: "title", widget: "string" }
+            - { label: "Description", name: "description", widget: "text" }
+        - { label: "CTA Title", name: "cta_title", widget: "string" }
+        - { label: "CTA Text", name: "cta_text", widget: "text" }
+
 
   - name: "projects"
     label: "Projects"
