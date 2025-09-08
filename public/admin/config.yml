@@ -7,8 +7,8 @@ public_folder: "/uploads"
 
 collections:
   - name: "pages"
-  label: "Pages"
-  files:
+    label: "Pages"
+    files:
     - file: "src/content/pages/about.md"
       label: "About Page"
       name: "about"
