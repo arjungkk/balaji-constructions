@@ -1,7 +1,7 @@
 ---
 title: "About Us"
 hero: "Building durable, affordable, and modern homes tailored for village life."
-story_image: "/about-construction.jpg"
+story_image: "/images/project1.jpg"
 story_title: "Our Story"
 story_body: |
   Sree Balaji Constructions was founded with the mission to provide quality housing solutions to families in villages.  
@@ -17,5 +17,4 @@ values:
     description: "Our projects are rooted in strengthening and uplifting village communities."
 cta_title: "Let’s Build Together"
 cta_text: "Ready to start your dream home? Contact us today and let’s bring your vision to life."
-
 ---

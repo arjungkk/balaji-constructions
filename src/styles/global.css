@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 leading-relaxed antialiased transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  a {
+    @apply text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors;
+  }
+
+  input, textarea {
+    @apply w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition;
+  }
+
+  button {
+    @apply rounded-xl font-medium transition;
+  }
+}

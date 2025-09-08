@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import { getEntry } from "astro:content";
 
 async function fetchPage(slug: string) {
-  const page = await getEntry("pages", slug);
+  const page = await getEntry("about", slug);
   if (!page) throw new Error(`Page "${slug}" not found`);
   return page;
 }

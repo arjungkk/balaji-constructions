@@ -6,26 +6,41 @@ media_folder: "public/uploads"   # Where uploaded images go
 public_folder: "/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "about"
+    label: "About Page"
     files:
-    - file: "src/content/pages/about.md"
-      label: "About Page"
-      name: "about"
-      fields:
-        - { label: "Title", name: "title", widget: "string" }
-        - { label: "Hero", name: "hero", widget: "string" }
-        - { label: "Story Image", name: "story_image", widget: "image" }
-        - { label: "Story Title", name: "story_title", widget: "string" }
-        - { label: "Story Body", name: "story_body", widget: "markdown" }
-        - label: "Values"
-          name: "values"
-          widget: "list"
-          fields:
-            - { label: "Title", name: "title", widget: "string" }
-            - { label: "Description", name: "description", widget: "text" }
-        - { label: "CTA Title", name: "cta_title", widget: "string" }
-        - { label: "CTA Text", name: "cta_text", widget: "text" }
+      - file: "src/content/about/about.json"
+        label: "About Page"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Text", name: "hero", widget: "string" }
+          - { label: "Story Image", name: "story_image", widget: "image" }
+          - { label: "Story Title", name: "story_title", widget: "string" }
+          - { label: "Story Body", name: "story_body", widget: "markdown" }
+          - label: "Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "CTA Title", name: "cta_title", widget: "string" }
+          - { label: "CTA Text", name: "cta_text", widget: "string" }
+
+  # Home Page
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "src/content/home/home.json"
+        label: "Homepage Settings"
+        name: "home"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string", required: false }
+          - { label: "Hero Background", name: "hero_bg", widget: "image" }
+          - { label: "Hero Button Text", name: "hero_button", widget: "string", required: false }
+          - { label: "Hero Button Link", name: "hero_button_link", widget: "string", required: false }
+
 
 
   - name: "projects"
