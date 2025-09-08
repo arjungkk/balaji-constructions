@@ -1,5 +1,5 @@
 interface NetlifyIdentity {
-  init: () => void;
+  init(options?: { APIUrl?: string }): void;
   on: (event: string, callback: (user?: any) => void) => void;
   open: () => void;
   logout: () => void;
