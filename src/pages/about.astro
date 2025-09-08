@@ -12,40 +12,57 @@ async function fetchPage(slug: string) {
 
 const about = await fetchPage("about");
 
-const { title, hero, story_image, story_title, story_body, values, cta_title, cta_text } = about.data;
+const {
+  title,
+  hero,
+  story_image,
+  story_title,
+  story_body,
+  values,
+  cta_title,
+  cta_text
+} = about.data;
 
-// Default values to avoid undefined
 const safeValues = values ?? [];
 ---
 
 <Layout title={`${title} - Sree Balaji Constructions`}>
   <Header />
 
-  <main class="py-16 px-6 max-w-6xl mx-auto">
+  <main class="py-16 px-6 max-w-6xl mx-auto text-gray-800 dark:text-gray-100">
     <!-- Hero Section -->
     <section class="text-center mb-16">
-      <h1 class="text-5xl font-bold mb-4 text-gray-800">{title}</h1>
-      <p class="text-lg text-gray-600">{hero}</p>
+      <h1 class="text-5xl font-bold mb-4">{title}</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400">{hero}</p>
     </section>
 
     <!-- Story Section -->
     <section class="grid md:grid-cols-2 gap-12 items-center mb-20">
-      <img src={story_image} alt={story_title} class="rounded-xl shadow-lg" />
+      <img
+        src={story_image}
+        alt={story_title}
+        class="rounded-2xl shadow-lg"
+      />
       <div>
         <h2 class="text-3xl font-semibold mb-4">{story_title}</h2>
-        <div class="text-gray-700 leading-relaxed" set:html={story_body} />
+        <div
+          class="text-gray-700 dark:text-gray-300 leading-relaxed"
+          set:html={story_body}
+        />
       </div>
     </section>
 
     <!-- Values Section -->
     {safeValues.length > 0 && (
-      <section class="bg-gray-100 rounded-2xl p-10 mb-20">
+      <section class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-10 mb-20">
         <h2 class="text-3xl font-semibold mb-8 text-center">Our Core Values</h2>
         <div class="grid md:grid-cols-3 gap-8 text-center">
           {safeValues.map((val) => (
-            <div>
-              <h3 class="text-xl font-bold text-blue-600 mb-2">{val.title}</h3>
-              <p class="text-gray-600">{val.description}</p>
+            <div class="p-4 rounded-xl hover:shadow-md transition">
+              <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                {val.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400">{val.description}</p>
             </div>
           ))}
         </div>
@@ -55,7 +72,7 @@ const safeValues = values ?? [];
     <!-- CTA Section -->
     <section class="text-center">
       <h2 class="text-3xl font-semibold mb-6">{cta_title}</h2>
-      <p class="text-gray-700 mb-6">{cta_text}</p>
+      <p class="text-gray-700 dark:text-gray-300 mb-6">{cta_text}</p>
       <a
         href="/contact"
         class="bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg font-semibold hover:bg-blue-700 transition"

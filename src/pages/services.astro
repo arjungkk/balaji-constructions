@@ -3,17 +3,29 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+type Service = CollectionEntry<"services">;
+const services: Service[] = await getCollection("services");
 ---
 
 <Layout title="Our Services">
   <Header />
 
-  <main class="py-16 px-6 max-w-6xl mx-auto">
-    <h1 class="text-4xl font-bold text-center mb-12">Our Services</h1>
+  <main class="py-20 px-6 max-w-6xl mx-auto">
+    <!-- Page Title -->
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
+      Our Services
+    </h1>
+
+    <!-- Services Grid -->
     <div class="grid md:grid-cols-3 gap-8">
-      <ServiceCard title="House Construction" description="Full construction service from foundation to finishing." />
-      <ServiceCard title="Renovations" description="Expert renovations to modernize and strengthen existing homes." />
-      <ServiceCard title="Design Assistance" description="Tailored designs that balance tradition with modern style." />
+      {services.map((service) => (
+        <ServiceCard
+          title={service.data.title}
+          description={service.data.description}
+        />
+      ))}
     </div>
   </main>
 

@@ -3,17 +3,33 @@ interface Props {
   title: string;
   image?: string;
   description: string;
-  href: string; // new prop for link
+  href: string;
 }
 
 const { title, image, description, href } = Astro.props;
 ---
 
-<a href={href} class="block bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden">
-  <img src={image} alt={title} class="w-full h-48 object-cover" />
+<a 
+  href={href} 
+  class="block bg-white dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-lg 
+         transition transform hover:scale-[1.02] overflow-hidden group"
+>
+  {image && (
+    <img 
+      src={image} 
+      alt={title} 
+      class="w-full h-48 object-cover group-hover:opacity-90 transition"
+    />
+  )}
   <div class="p-6">
-    <h3 class="text-xl font-semibold mb-2">{title}</h3>
-    <p class="text-gray-600 text-sm mb-4">{description}</p>
-    <span class="text-blue-600 font-semibold hover:underline">View Project →</span>
+    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+      {title}
+    </h3>
+    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+      {description}
+    </p>
+    <span class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+      View Project →
+    </span>
   </div>
 </a>

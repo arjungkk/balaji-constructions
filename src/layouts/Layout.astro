@@ -1,11 +1,19 @@
 ---
 const { title } = Astro.props;
 ---
-<html lang="en">
+
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title ? title + " | Sree Balaji Constructions" : "Sree Balaji Constructions"}</title>
+    <title>
+      {title ? `${title} | Sree Balaji Constructions` : "Sree Balaji Constructions"}
+    </title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <script>
       (function () {
@@ -37,7 +45,7 @@ const { title } = Astro.props;
       }
     </script>
   </head>
-  <body class="bg-gray-50 text-gray-900">
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-[Inter] transition-colors duration-300">
     <slot />
   </body>
 </html>
