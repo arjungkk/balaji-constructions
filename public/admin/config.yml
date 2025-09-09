@@ -41,8 +41,6 @@ collections:
           - { label: "Hero Button Text", name: "hero_button", widget: "string", required: false }
           - { label: "Hero Button Link", name: "hero_button_link", widget: "string", required: false }
 
-
-
   - name: "projects"
     label: "Projects"
     folder: "src/content/projects"
@@ -64,3 +62,13 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Icon", name: "icon", widget: "string", hint: "Use a FontAwesome icon class, e.g., 'fa-solid fa-hammer'" }
       - { label: "Description", name: "description", widget: "text" } 
+  
+  - name: "site"
+    label: "Site Settings"
+    folder: "src/content/site"
+    create: false
+    slug: "info"
+    fields:
+      - { label: "Address", name: "footer_address", widget: "string" }
+      - { label: "Phone", name: "footer_phone", widget: "string" }
+      - { label: "Email", name: "footer_email", widget: "string" }

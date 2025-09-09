@@ -17,7 +17,6 @@ const servicesCollection = defineCollection({
 
 // Home page schema
 const homeCollection = defineCollection({
-  type: "data",
   schema: z.object({
     hero_title: z.string(),
     hero_subtitle: z.string().optional(),
@@ -29,7 +28,6 @@ const homeCollection = defineCollection({
 
 // About page schema
 const aboutCollection = defineCollection({
-  type: "data",
   schema: z.object({
     title: z.string(),
     hero: z.string().optional(),
@@ -49,9 +47,19 @@ const aboutCollection = defineCollection({
   }),
 });
 
+const site = defineCollection({
+  type: "data",
+  schema: z.object({
+    footer_address: z.string(),
+    footer_phone: z.string(),
+    footer_email: z.string(),
+  }),
+});
+
 export const collections = {
   projects: projectsCollection,
   services: servicesCollection,
   home: homeCollection,
-  about: aboutCollection
+  about: aboutCollection,
+  site: site,
 };
